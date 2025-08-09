@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>CC3M - Trang chủ</title>
+    <link rel="stylesheet" href="LoginForm.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
+    <script src="cc3m-shop.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            width: 100vw;
+            background: url('image trang chu/ChatGPT Image 14_45_33 14 thg 6, 2025.png') center center/cover no-repeat fixed;
+            font-family: 'Montserrat', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .ch-loginbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 32px 40px 0 0;
+            z-index: 20;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            color: #111;
+        }
+        .ch-loginbar span {
+            margin: 0 8px;
+        }
+        .ch-icon {
+            position: fixed;
+            top: 32px;
+            left: 32px;
+            z-index: 20;
+            font-size: 40px;
+            color: #111;
+            cursor: pointer;
+        }
+        .ch-footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 0 24px 18px 18px;
+            font-size: 15px;
+            color: #444;
+            font-family: 'Montserrat', Arial, sans-serif;
+            z-index: 10;
+        }
+        .ch-footer-left, .ch-footer-right {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        .ch-footer-right img {
+            height: 22px;
+            margin-left: 8px;
+        }
+        @media (max-width: 600px) {
+            .ch-loginbar { font-size: 15px; padding: 18px 10px 0 0; }
+            .ch-icon { top: 12px; left: 10px; font-size: 28px; }
+            .ch-footer { font-size: 12px; padding: 0 6px 8px 6px; }
+        }
+        .menu-dropdown {
+            display: none;
+            flex-direction: column;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .menu-dropdown-link {
+            padding: 12px 16px;
+            color: #111;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        .menu-dropdown-link:hover {
+            background: #f0f0f0;
+        }
+        .menu-logo-btn {
+            position: fixed;
+            top: 32px;
+            left: 32px;
+            z-index: 20;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        /* Đã bỏ các class liên quan đến sản phẩm */
+    </style>
+</head>
+<body>
+    <div style="width:100%; display:flex; justify-content:center; align-items:center; margin:0;">
+      <a href="MainForm.html" id="main-logo-link" style="display:inline-block;">
+        <img src="image trang chu/logocaychoi3m.png" alt="Logo" style="height:320px; width:auto; max-width:90vw; display:block; object-fit:contain;">
+      </a>
+    </div>
+    <div class="ch-loginbar">
+        <span id="login-btn" style="cursor:pointer;">LOGIN</span>
+        <span>/</span>
+        <span id="bag-btn" style="cursor:pointer;">BAG 0</span>
+    </div>
+    <div class="ch-footer">
+        <div class="ch-footer-left">
+            <!-- Đã xóa các mục: TERMS, CA SUPPLY CHAIN ACT, PRIVACY -->
+        </div>
+        <div class="ch-footer-right">
+            <!-- Đã xóa các mục: GENERAL, CONTACT, VN, cờ VN -->
+        </div>
+    </div>
+    <button class="menu-logo-btn" id="menuLogoBtn" style="position: fixed; top: 32px; left: 32px; z-index: 20;">
+        <img src="image trang chu/logomenudropblack.png" alt="Menu Logo" class="menu-logo-img">
+    </button>
+    <div class="menu-dropdown" id="menuDropdown">
+        <a href="#" class="menu-dropdown-link">SHOP</a>
+        <a href="#" class="menu-dropdown-link">LOCATIONS</a>
+        <a href="#" class="menu-dropdown-link">MAGAZINE</a>
+        <a href="#" class="menu-dropdown-link">LOGIN</a>
+    </div>
+    <!-- Contact Form -->
+    <main style="margin-top:24px; margin-bottom:48px; width:100%; display:flex; justify-content:center; align-items:center;">
+      <form id="contactForm" style="max-width:400px; width:100%; margin:0 auto; display:flex; flex-direction:column; gap:12px; background:transparent; align-items:center;">
+        <h2 style="text-align:center; font-family:'Montserrat', Arial, sans-serif; font-size:1.18rem; font-weight:700; margin-bottom:18px; color:#111; letter-spacing:1px;">Send us a message</h2>
+        <div style="width:100%; display:flex; flex-direction:column; gap:12px;">
+          <label for="firstName" style="font-family:'Roboto Medium','Roboto',Arial,sans-serif; font-size:12px; color:#717171; font-weight:500; margin-bottom:2px;">First Name</label>
+          <input type="text" id="firstName" name="firstName" required style="width:100%; padding:6px 12px; border:1.5px solid #bbb; border-radius:6px; font-size:1rem; background:#fff; font-family:'Montserrat', Arial, sans-serif;">
+          <label for="lastName" style="font-family:'Roboto Medium','Roboto',Arial,sans-serif; font-size:12px; color:#717171; font-weight:500; margin-bottom:2px;">Last Name</label>
+          <input type="text" id="lastName" name="lastName" required style="width:100%; padding:6px 12px; border:1.5px solid #bbb; border-radius:6px; font-size:1rem; background:#fff; font-family:'Montserrat', Arial, sans-serif;">
+          <label for="email" style="font-family:'Roboto Medium','Roboto',Arial,sans-serif; font-size:12px; color:#717171; font-weight:500; margin-bottom:2px;">Email</label>
+          <input type="email" id="email" name="email" required style="width:100%; padding:6px 12px; border:1.5px solid #bbb; border-radius:6px; font-size:1rem; background:#fff; font-family:'Montserrat', Arial, sans-serif;">
+          <label for="phone" style="font-family:'Roboto Medium','Roboto',Arial,sans-serif; font-size:12px; color:#717171; font-weight:500; margin-bottom:2px;">Phone Number</label>
+          <input type="tel" id="phone" name="phone" style="width:100%; padding:6px 12px; border:1.5px solid #bbb; border-radius:6px; font-size:1rem; background:#fff; font-family:'Montserrat', Arial, sans-serif;">
+          <label for="orderNumber" style="font-family:'Roboto Medium','Roboto',Arial,sans-serif; font-size:12px; color:#717171; font-weight:500; margin-bottom:2px;">Order Number (optional)</label>
+          <input type="text" id="orderNumber" name="orderNumber" style="width:100%; padding:6px 12px; border:1.5px solid #bbb; border-radius:6px; font-size:1rem; background:#fff; font-family:'Montserrat', Arial, sans-serif;">
+          <label for="subject" style="font-family:'Roboto Medium','Roboto',Arial,sans-serif; font-size:12px; color:#717171; font-weight:500; margin-bottom:2px;">Subject</label>
+          <input type="text" id="subject" name="subject" required style="width:100%; padding:6px 12px; border:1.5px solid #bbb; border-radius:6px; font-size:1rem; background:#fff; font-family:'Montserrat', Arial, sans-serif;">
+          <label for="message" style="font-family:'Roboto Medium','Roboto',Arial,sans-serif; font-size:12px; color:#717171; font-weight:500; margin-bottom:2px;">Message</label>
+          <textarea id="message" name="message" required style="width:100%; padding:6px 12px; border:1.5px solid #bbb; border-radius:6px; font-size:1rem; background:#fff; font-family:'Montserrat', Arial, sans-serif; min-height:100px; resize:vertical;"></textarea>
+        </div>
+        <button type="submit" class="contact-btn" style="width:100%; background:transparent; color:#111; border:2px solid #111; border-radius:8px; padding:13px 0; font-size:1.08rem; font-family:'Montserrat', Arial, sans-serif; font-weight:700; letter-spacing:1.5px; margin-top:8px; cursor:pointer; transition:background 0.2s, color 0.2s, border 0.2s;">Send Message</button>
+      <style>
+        .contact-btn:hover {
+          background: #111 !important;
+          color: #fff !important;
+          border-color: #111 !important;
+        }
+      </style>
+      </form>
+    </main>
+    <!-- Script đã chuyển sang cc3m-shop.js -->
+</body>
+</html>

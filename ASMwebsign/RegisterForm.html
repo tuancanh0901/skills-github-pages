@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTER | CC3M</title>
+    <link rel="stylesheet" href="LoginForm.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
+    <script src="cc3m-shop.js"></script>
+    <style>
+        body {
+            min-height: 100vh;
+            width: 100vw;
+            background: url('image trang chu/ChatGPT Image 14_45_33 14 thg 6, 2025.png') center center/cover no-repeat;
+            font-family: 'Montserrat', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .register-center-block {
+            background: rgba(255,255,255,0.5);
+            border-radius: 12px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+            padding: 36px 32px 28px 32px;
+            max-width: 410px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .register-tab-row {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            border-bottom: 1.5px solid #bbb;
+        }
+        .register-tab {
+            background: none;
+            border: none;
+            outline: none;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 1.18rem;
+            font-weight: 700;
+            color: #222;
+            padding: 12px 32px 10px 0;
+            margin-right: 18px;
+            cursor: pointer;
+            border-bottom: 2.5px solid transparent;
+            transition: color 0.18s, border-bottom 0.18s;
+            letter-spacing: 1px;
+        }
+        .register-tab.active {
+            color: #111;
+            border-bottom: 2.5px solid #111;
+        }
+        .register-tab:not(.active) {
+            color: #888;
+        }
+        .register-tab:last-child {
+            margin-right: 0;
+            padding-right: 0;
+        }
+        .register-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 0;
+        }
+        .register-form label {
+            font-family: 'Roboto Medium', 'Roboto', Arial, sans-serif;
+            font-size: 12px;
+            color: #717171;
+            font-weight: 500;
+            margin-bottom: 2px;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+        .register-form input[type="text"],
+        .register-form input[type="password"],
+        .register-form input[type="email"],
+        .register-form input[type="tel"] {
+            width: 100%;
+            padding: 6px 12px;
+            border: 1.5px solid #bbb;
+            border-radius: 6px;
+            font-size: 1rem;
+            background: #fff;
+            font-family: 'Montserrat', Arial, sans-serif;
+            transition: border 0.2s;
+        }
+        .register-form input:focus {
+            border: 1.5px solid #111;
+            outline: none;
+            background: #fafafa;
+        }
+        .register-btn {
+            width: 100%;
+            background: #111;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 13px 0;
+            font-size: 1.08rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-top: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .register-btn:hover {
+            background: #222;
+        }
+        @media (max-width: 500px) {
+            .register-center-block {
+                min-width: 0;
+                padding: 18px 6vw 18px 6vw;
+            }
+        }
+    </style>
+</head>
+<body style="min-height: 100vh; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; background: url('image trang chu/ChatGPT Image 14_45_33 14 thg 6, 2025.png') center center/cover no-repeat; font-family: 'Montserrat', Arial, sans-serif;">
+    <div class="register-center-block" style="margin-top: 0;">
+        <div class="login-logo" style="display: flex; justify-content: center; align-items: flex-start; margin-top: 0; margin-bottom: 12px;">
+            <a href="MainForm.html" style="display:inline-block;width:auto;height:auto;line-height:0;overflow:hidden;">
+                <img src="image trang chu/logocaychoi3m.png" alt="Logo" class="logocaychoi3m" style="height: 180px; width: auto; max-width: 95vw; object-fit: contain; display: block; margin: 0; padding: 0; border: none;">
+            </a>
+        </div>
+        <div class="register-tab-row" style="margin-bottom: 10px;">
+            <button class="register-tab" id="login-tab-btn" type="button">LOGIN</button>
+            <button class="register-tab active" id="register-tab-btn" type="button">CREATE ACCOUNT</button>
+        </div>
+        <form class="login-form register-form" style="display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; width: 100%; gap: 12px; margin-top: 0;">
+            <label for="email"><span style='color:#d32f2f'>*</span> Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="confirm-email"><span style='color:#d32f2f'>*</span> Confirm Email</label>
+            <input type="email" id="confirm-email" name="confirm-email" required>
+            <label for="password"><span style='color:#d32f2f'>*</span> Password</label>
+            <input type="password" id="password" name="password" required>
+            <label for="confirm-password"><span style='color:#d32f2f'>*</span> Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+            <button type="submit" class="register-btn">CREATE ACCOUNT</button>
+        </form>
+    </div>
+    <div id="success-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <h3>Đăng ký thành công!</h3>
+            <p>Bạn đã đăng ký tài khoản thành công. Vui lòng đăng nhập.</p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('login-tab-btn').onclick = function() {
+            window.location.href = 'LoginForm.html';
+        };
+        document.getElementById('register-tab-btn').onclick = function() {
+            window.location.href = 'RegisterForm.html';
+        };
+        document.querySelector('.register-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Validate các trường nếu cần
+            const email = document.getElementById('email').value.trim();
+            const confirmEmail = document.getElementById('confirm-email').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            if (email !== confirmEmail) {
+                alert('Email không khớp!');
+                return;
+            }
+            if (password !== confirmPassword) {
+                alert('Mật khẩu nhập lại không khớp!');
+                return;
+            }
+            // Lưu thông tin vào localStorage (demo)
+            localStorage.setItem('username', email);
+            localStorage.setItem('password', password);
+            document.querySelector('.register-form').style.display = 'none';
+            document.getElementById('success-modal').style.display = 'flex';
+            setTimeout(function() {
+                window.location.href = 'LoginForm.html';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
